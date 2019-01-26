@@ -14,13 +14,13 @@ var server = http.createServer(function(request, response) {
 
     console.log('HTTP 路径为\n' + path);
 
-    if (path == '/style') {
+    if (path == '/style.css') {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/css;charset=utf-8');
         response.write('\n服务器连接成功 路径为/style');
         response.write('\nbody{background-color:#ddd};\nh1{color:red}\n');
         response.end();
-    } else if (path == '/script') {
+    } else if (path == '/main.js') {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/javascript;charset=utf-8');
         response.write('\n服务器连接成功 路径为/script');
@@ -29,7 +29,7 @@ var server = http.createServer(function(request, response) {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'text/html;charset=utf-8');
         response.write('<!DOCTYPE>\n<html>\n<head>' +
-            "\n<link rel='stylesheet' href='/style'>" +
+            "\n<link rel='stylesheet' href='/style.css'>" +
              '\n</head>\n<body>\n<h1>你好!</h1>' +
              "\n<script src='/main.js'></script>" +
              '\n</body>\n</html>' );
